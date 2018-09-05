@@ -1,0 +1,9 @@
+cmplaysdkios_public:2 type:string user_id:string ver:string channel:string pkg_name:string child_channel:string mcc:short mnc:short language_setting:string brand:string model:string country_setting:string osver:string x86:string installtime:int sdk_ver:string magic_ver:string appflyer_id:string gp_channel:string
+cmplaysdkios_service_active:101 uptime2:int64 network:byte action:byte reserve1:string reserve2:string reserve3:string reserve4:string
+cmplaysdkios_neitui_app:103 uptime2:int64 player_time:string network:byte source:byte action:byte scenes:byte pkgname:string pro_id:int remark:string scene:byte priority:int reserve1:string reserve2:string
+cmplaysdkios_cloud_magic:104 uptime2:int64 player_time:string network:byte action:byte remark:string error_url:string reserve1:string reserve2:string
+cmplaysdkios_show_active:105 uptime2:int64 network:byte type1:byte firstplay:byte reserve1:string reserve2:string reserve3:string reserve4:string survival_time:int64
+cmplaysdkios_ads:106 uptime2:int64 player_time:string network:byte scene:byte action:byte ad_source:byte commercial:bit failure:byte remove_ads:bit reserve1:int64 reserve2:byte reserve3:string reserve4:string
+cmplaysdkios_single_game:107 uptime2:int64 player_time:string network:byte player_id:string current_score:int high_score:int games_played:int mode:byte area:byte action:byte play_duration:int consume_diamond:int remain_diamond:int revival_number:byte revival_mark:byte replay_mark:byte get_coin:int get_exp:int consume_life:int remain_life:int remain_coin:int deadtiles_num:int pass_record:byte play_result:byte level:int score:int
+cmplaysdkios_purchases:108 uptime:int64 network:byte action:byte source:byte orderid:string productid:string remark:string
+cmplaysdkios_gdpr:109 uptime:int64 network:byte windows:byte action:byte

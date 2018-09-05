@@ -1,0 +1,6 @@
+framework module CMPlayCloudConfig {
+  umbrella header "CMPlayCloudConfig.h"
+
+  export *
+  module * { export * }
+}

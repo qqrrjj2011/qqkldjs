@@ -1,0 +1,6 @@
+framework module CMPlayBase {
+  umbrella header "CMPlayBase.h"
+
+  export *
+  module * { export * }
+}

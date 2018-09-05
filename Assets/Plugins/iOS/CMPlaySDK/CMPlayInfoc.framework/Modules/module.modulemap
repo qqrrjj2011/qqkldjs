@@ -1,0 +1,6 @@
+framework module CMPlayInfoc {
+  umbrella header "CMPlayInfoc.h"
+
+  export *
+  module * { export * }
+}

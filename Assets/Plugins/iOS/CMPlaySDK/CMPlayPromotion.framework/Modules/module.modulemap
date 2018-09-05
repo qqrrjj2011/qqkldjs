@@ -1,0 +1,6 @@
+framework module CMPlayPromotion {
+  umbrella header "CMPlayPromotion.h"
+
+  export *
+  module * { export * }
+}

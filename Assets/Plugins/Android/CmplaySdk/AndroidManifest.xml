@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.cmplay.sdk">
+
+    <application>
+        <!--&lt;!&ndash; open the debug log or not   NOTE: when you release, must close the debug log&ndash;&gt;-->
+        <!--<meta-data android:name="SET_PROMOTION_LOG" android:value="false"/>-->
+
+        <!--&lt;!&ndash; infoc&ndash;&gt;-->
+        <!--<service android:name="com.cmplay.kinfoc.report.service.KinfocReportSerivce"-->
+            <!--android:process=":service">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="start_service"/>-->
+            <!--</intent-filter>-->
+        <!--</service>-->
+
+        <!--<receiver android:name="com.cmplay.kinfoc.report.service.NetWorkChangeReceiver"-->
+            <!--android:process=":service">-->
+            <!--<intent-filter >-->
+                <!--<action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>-->
+            <!--</intent-filter>-->
+        <!--</receiver>-->
+        <!--&lt;!&ndash; infoc&ndash;&gt;-->
+
+        <!--&lt;!&ndash; inner push&ndash;&gt;-->
+        <!--<service-->
+            <!--android:name= "com.cmplay.internalpush.InnerPushService"-->
+            <!--android:process=":service" />-->
+
+        <!--&lt;!&ndash; !!NOTE!!! must replace "${applicationId}" to your app package name&ndash;&gt;-->
+        <!--<provider-->
+            <!--android:name="com.cmplay.base.util.ipc.IpcProvider"-->
+            <!--android:authorities="${applicationId}.innerpush_provider"-->
+            <!--android:exported="false"-->
+            <!--android:process=":service"-->
+            <!--&gt;-->
+        <!--</provider>-->
+
+        <!--<activity-->
+            <!--android:name="com.cmplay.internalpush.ui.OpenScreenActivity"-->
+            <!--android:configChanges="keyboardHidden|orientation|screenSize"-->
+            <!--android:launchMode="singleTask"-->
+            <!--android:screenOrientation="sensorPortrait"-->
+            <!--android:theme="@style/innerpush_theme"-->
+            <!--android:windowSoftInputMode="adjustResize" />-->
+
+        <!--<activity-->
+            <!--android:name="com.cmplay.internalpush.ui.OpenScreenVideoActivity"-->
+            <!--android:configChanges="keyboardHidden|orientation|screenSize"-->
+            <!--android:launchMode="singleTask"-->
+            <!--android:hardwareAccelerated="true"-->
+            <!--android:screenOrientation="sensorPortrait"-->
+            <!--android:theme="@style/innerpush_theme"-->
+            <!--android:windowSoftInputMode="adjustResize" />-->
+
+        <!--<activity-->
+            <!--android:name="com.cmplay.internalpush.ui.InsertScreenActivity"-->
+            <!--android:configChanges="keyboardHidden|orientation|screenSize"-->
+            <!--android:launchMode="singleTask"-->
+            <!--android:screenOrientation="sensorPortrait"-->
+            <!--android:theme="@style/innerpush_theme"-->
+            <!--android:windowSoftInputMode="adjustResize" />-->
+        <!--&lt;!&ndash; 注意pt2不是独立进程&ndash;&gt;-->
+        <!--<activity-->
+            <!--android:name="com.cmplay.internalpush.video.IncentiveVideoPlayActivity"-->
+            <!--android:launchMode="singleTask"-->
+            <!--android:configChanges="keyboardHidden|orientation|screenSize"-->
+            <!--android:hardwareAccelerated="true"-->
+            <!--android:theme="@style/innerpush_theme"-->
+            <!--android:process=":inner"-->
+            <!--&gt;-->
+        <!--</activity>-->
+        <!--&lt;!&ndash; 注意pt2不是独立进程&ndash;&gt;-->
+        <!--<activity-->
+            <!--android:name="com.cmplay.internalpush.video.VideoAdDetailActivity"-->
+            <!--android:launchMode="singleTask"-->
+            <!--android:configChanges="keyboardHidden|orientation|screenSize"-->
+            <!--android:theme="@style/innerpush_theme"-->
+            <!--android:process=":inner"-->
+            <!--&gt;-->
+        <!--</activity>-->
+
+        <!--<activity-->
+            <!--android:name="com.cmplay.base.util.webview.ui.WebViewActivity"-->
+            <!--android:configChanges="orientation"-->
+            <!--android:exported="true"-->
+            <!--android:process=":web"-->
+            <!--android:screenOrientation="portrait" />-->
+
+        <!--<receiver android:name="com.cmplay.base.util.webview.broadcast.GameBroadcast"-->
+            <!--android:exported="true">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="com.cmplay.base.util.webview.broadcast.gamebroadcast" />-->
+            <!--</intent-filter>-->
+        <!--</receiver>-->
+
+        <!--<receiver android:name="com.cmplay.CMCampaignTrackingReceiver"-->
+            <!--android:exported="true">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="com.android.vending.INSTALL_REFERRER" />-->
+            <!--</intent-filter>-->
+        <!--</receiver>-->
+        <!--&lt;!&ndash; inner push&ndash;&gt;-->
+
+
+    </application>
+
+    <!--&lt;!&ndash; infoc&ndash;&gt;-->
+    <!--<meta-data-->
+        <!--android:name="CMPLAY_SYNC_IPC"-->
+        <!--android:value="com.cmplay.kinfoc.sync" />-->
+    <!--&lt;!&ndash; infoc&ndash;&gt;-->
+  <!---->
+    <!--&lt;!&ndash; permission&ndash;&gt;-->
+    <!--<uses-permission android:name="android.permission.INTERNET" />-->
+    <!--<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />-->
+    <!--<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />-->
+    <!--<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>-->
+    <!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>-->
+
+</manifest>
