@@ -5,26 +5,7 @@ using UnityEngine.UI;
 using DG.Tweening;
 
 public class MainUI : MonoBehaviour {
-	Transform shopTip;
-	Transform signTip;
-	Transform signFinishBg;
-
-	public Transform shopBtn;
-	public Transform signBtn;
-	public Transform endlessBtn;
-	public Transform normalBtn;
-	public Transform ballsBtn;
  
-	public Transform endlessUI;
-	public Transform normalUI;
-	public Transform shopUI;
-	public Transform ballsUI;
-
-	public Transform signUI;
-	Transform curUI;
-	Transform preUI;
-
-	int curIndex = 0;
 	// Use this for initialization
 	void Awake() 
 	{
@@ -39,57 +20,7 @@ public class MainUI : MonoBehaviour {
 		//			// ballsBtn.Find("selectImg").gameObject.SetActive(true);
 		//		switchUI(1,true);
 		//	});
-
-
-		//normalBtn.GetComponent<Button>().onClick.AddListener(()=>{
-		//		 	// reSetBtnState(); 
-		//			// normalBtn.Find("selectImg").gameObject.SetActive(true);
-
-		//			// gameObject.SetActive(false);
-		//			// GameMgr.inst().uiControl.enterLevelMenu();
-		//			if(2 == curIndex)return;
-		//		switchUI(2,true);
-		//	});
-		
-		
-		
-		//shopBtn.GetComponent<Button>().onClick.AddListener(()=>{
-		//		// reSetBtnState(); 
-		//		// shopBtn.Find("selectImg").gameObject.SetActive(true);
-			 
-				 
-		//		// GameMgr.inst().uiControl.shopBtn();
-		//		if(3 == curIndex)return;
-		//		switchUI(3,true);
-		//	});
-	
-		
-
-		//signBtn.GetComponent<Button>().onClick.AddListener(()=>{
-		//		if(4 == curIndex)return;
-		//		switchUI(4,true);
-				 
-		//		//GameMgr.inst().uiControl.loginBtn();
-		//	});
  
-		//shopTip = transform.Find("shopBtn").Find("tip");
-
-		//signTip = transform.Find("signBtn").Find("tip");
-
-		//signFinishBg = transform.Find("signBtn").Find("finishImg");
-		//signFinishBg.gameObject.SetActive(false);
-
-		//curUI = endlessUI;
-
-		//shopUI.gameObject.SetActive(false);
-		//ballsUI.gameObject.SetActive(false);
-		//normalUI.gameObject.SetActive(false);
-		//endlessUI.gameObject.SetActive(true);
-		//signUI.gameObject.SetActive(false);
-		//reSetUI();
- 
-		//endlessBtn.Find("selectImg").gameObject.SetActive(true);
-
  
 	}
 
@@ -115,24 +46,24 @@ public class MainUI : MonoBehaviour {
 	
 	public void setTip()
 	{
-		if(!GameMgr.inst().havaDoubleSign() || !GameMgr.inst().havaSign())
-		{
-			signTip.gameObject.SetActive(true);
-		}else{
-			signTip.gameObject.SetActive(false);
-		}
-		if(GameMgr.inst().havaDoubleSign() && GameMgr.inst().havaSign())
-		{
-			signFinishBg.gameObject.SetActive(true);
-		}
+		// if(!GameMgr.inst().havaDoubleSign() || !GameMgr.inst().havaSign())
+		// {
+		// 	signTip.gameObject.SetActive(true);
+		// }else{
+		// 	signTip.gameObject.SetActive(false);
+		// }
+		// if(GameMgr.inst().havaDoubleSign() && GameMgr.inst().havaSign())
+		// {
+		// 	signFinishBg.gameObject.SetActive(true);
+		// }
 
-		if(PlayerPrefs.GetInt("shopAdsCount",5) > 0 && PlatformHelper.inst().isReadUnityOrAdmobAwardAds())
-		{
-			shopTip.gameObject.SetActive(true);
-		}else
-		{
-			shopTip.gameObject.SetActive(false);
-		}
+		// if(PlayerPrefs.GetInt("shopAdsCount",5) > 0 && PlatformHelper.inst().isReadUnityOrAdmobAwardAds())
+		// {
+		// 	shopTip.gameObject.SetActive(true);
+		// }else
+		// {
+		// 	shopTip.gameObject.SetActive(false);
+		// }
 		
 	}
 
@@ -213,15 +144,12 @@ public class MainUI : MonoBehaviour {
 	
 	void reSetUI()
 	{
-		ballsBtn.Find("selectImg").gameObject.SetActive(false);
-		normalBtn.Find("selectImg").gameObject.SetActive(false);
-		shopBtn.Find("selectImg").gameObject.SetActive(false);
-		endlessBtn.Find("selectImg").gameObject.SetActive(false);
-		signBtn.Find("selectImg").gameObject.SetActive(false);
+		// ballsBtn.Find("selectImg").gameObject.SetActive(false);
+		// normalBtn.Find("selectImg").gameObject.SetActive(false);
+		// shopBtn.Find("selectImg").gameObject.SetActive(false);
+		// endlessBtn.Find("selectImg").gameObject.SetActive(false);
+		// signBtn.Find("selectImg").gameObject.SetActive(false);
 		
-		// endlessUI.gameObject.SetActive(false);
-		// shopUI.gameObject.SetActive(false);
-		// ballsUI.gameObject.SetActive(false);
-		// normalUI.gameObject.SetActive(false);
+ 
 	}
 }

@@ -127,11 +127,11 @@ public class PlatformHelper : MonoBehaviour {
 
 		// unity ads init
 		Advertisement.Initialize(unity_adsID_fy);
-		
-		
 
-		// 谷歌ads
-		initAdmob();
+       
+
+        // 谷歌ads
+        initAdmob();
 
 
 	//	GetSystemLanguage();

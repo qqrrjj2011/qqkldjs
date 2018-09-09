@@ -8,6 +8,8 @@ public class EnemyControl : MonoBehaviour {
     public float startX = -3;
     public float endY = -6;
     public float gap = 1.2f;
+    public float minScale = 0.1f;
+    public float maxScale = 1;
     public int col = 5;
 
     public float newRowTime = 0.6f;
@@ -15,8 +17,7 @@ public class EnemyControl : MonoBehaviour {
     public Transform player;
 
     public float sizeX = 1;
-
-    public float maxScale = 6;
+ 
 
     SpriteRenderer spriteRenderer;
     // Use this for initialization
@@ -48,7 +49,7 @@ public class EnemyControl : MonoBehaviour {
                 Transform eny = Transform.Instantiate(enemyPrefab);
                 eny.SetParent(transform);
                 eny.localPosition = new Vector3(-3 + gap * i + Random.Range(-1f, 1.0f), startY + Random.Range(-1f, 1f), 0);
-                Vector3 toScale = player.localScale * Random.Range(0.3f, 1.5f);
+                Vector3 toScale = new Vector3(1,1,1) * Random.Range(minScale, maxScale);
                 if (toScale.x > maxScale)
                 {
                     toScale = new Vector3(maxScale, maxScale, 1);
