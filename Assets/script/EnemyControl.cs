@@ -20,20 +20,29 @@ public class EnemyControl : MonoBehaviour {
  
 
     SpriteRenderer spriteRenderer;
+    static EnemyControl instance;
+    public static EnemyControl getInst()
+    {
+        return instance;
+    }
     // Use this for initialization
     void Start () {
-        GameMgr.inst().enemyControl = this;
+        instance = this;
         spriteRenderer = player.GetComponent<SpriteRenderer>();
         sizeX = spriteRenderer.bounds.size.x;
-        StartCoroutine(createEnemy());
+        
 	}
+
+    public void myStart()
+    {
+        StartCoroutine(createEnemy());
+
+    }
 
     public void reStart()
     {
-        foreach (Transform item in transform)
-        {
-            Destroy(item.gameObject);
-        }
+        clear();
+        StartCoroutine(createEnemy());
     }
 
     IEnumerator createEnemy()
@@ -59,6 +68,17 @@ public class EnemyControl : MonoBehaviour {
             yield return new WaitForSeconds(newRowTime);
            
         }
+    }
+
+    public void clear()
+    {
+        foreach (Transform item in transform)
+        {
+            Destroy(item.gameObject);
+        }
+
+        StopAllCoroutines();
+
     }
     
 }

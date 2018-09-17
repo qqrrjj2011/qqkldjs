@@ -81,7 +81,7 @@ public class ShopUI : MonoBehaviour {
 			btn1.GetComponent<Button>().interactable = false;
 
 		 
-				GameMgr.inst().uiControl.mainUI.setTip();
+			//	UIcontroller.getInst().mainUI.setTip();
 		 
 			
 		}
@@ -91,9 +91,9 @@ public class ShopUI : MonoBehaviour {
 	public void buyBtnClick(int type)
 	{
 		if(type != 1)
-			GameMgr.inst().uiControl.showBlockPanel(true,18);
+			UIcontroller.getInst().showBlockPanel(true,18);
 		PlatformHelper.inst().Pay(type,(int state)=>{
-			GameMgr.inst().uiControl.showBlockPanel(false);
+			UIcontroller.getInst().showBlockPanel(false);
 			if(state == 1)
 			{
 				adsSuccessBack = true;
@@ -109,14 +109,14 @@ public class ShopUI : MonoBehaviour {
 
 	public void reBuyClick()
 	{
-		GameMgr.inst().uiControl.showBlockPanel(true,18);
+		UIcontroller.getInst().showBlockPanel(true,18);
 		PlatformHelper.inst().purchaser.RestorePurchases((int state)=>{
 			if(state == 1)
 			{
 				adsSuccessBack = true;
 				curType = 0;
 			}
-			GameMgr.inst().uiControl.showBlockPanel(false,18);
+			UIcontroller.getInst().showBlockPanel(false,18);
 		});
 	}
 

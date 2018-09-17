@@ -50,7 +50,7 @@ public class Player : Entity {
 
         //if (Input.GetMouseButton(0) || Input.GetMouseButtonUp(0))
         //{
-        //    if (GameMgr.inst().uiControl.IsPointerOverUIObject(Input.mousePosition) && !indrag)
+        //    if (UIcontroller.getInst().IsPointerOverUIObject(Input.mousePosition) && !indrag)
         //    {
         //        //	Debug.Log(">>>>>>>>>>>>>>>>>click ui3");
         //        return;
@@ -64,7 +64,7 @@ public class Player : Entity {
            
         }
 
-        if (gameOver)
+        if (gameOver || GameMgr.inst().GetGameState() != gameState.ballRuning)
             return;
 
 
@@ -79,7 +79,11 @@ public class Player : Entity {
                 mousePos.x = lelfX;
             if (mousePos.x > rightX)
                 mousePos.x = rightX;
-            transform.position = new Vector3(mousePos.x, transform.position.y, transform.position.z);
+            if (mousePos.y < downY)
+                mousePos.y = downY;
+            if (mousePos.y > upY)
+                mousePos.y = upY;
+            transform.position = new Vector3(mousePos.x, mousePos.y, transform.position.z);
 
         }
         else if (Input.GetMouseButtonUp(0))
@@ -96,9 +100,10 @@ public class Player : Entity {
             if (transform.localScale.x < dieScale)
             {
                 Time.timeScale = 0;
-                GameMgr.inst().uiControl.dieType = 2;
+                
+                UIcontroller.getInst().dieType = 2;
                 gameOver = true;
-                GameMgr.inst().uiControl.gameOver(1);
+                UIcontroller.getInst().gameOver(1);
             }
         }
         
@@ -128,8 +133,8 @@ public class Player : Entity {
         {
             Time.timeScale = 0;
             gameOver = true;
-            GameMgr.inst().uiControl.dieType = 1;
-            GameMgr.inst().uiControl.gameOver(1);
+            UIcontroller.getInst().dieType = 1;
+            UIcontroller.getInst().gameOver(1);
           //  Destroy(gameObject);
         }
        

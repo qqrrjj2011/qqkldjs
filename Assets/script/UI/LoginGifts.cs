@@ -81,7 +81,7 @@ public class LoginGifts : MonoBehaviour {
 		{
 			doublebtn.interactable = false;
 			 
-			GameMgr.inst().uiControl.mainUI.setTip();
+		//	UIcontroller.getInst().mainUI.setTip();
  
 			//doubleBtnTr.Find("Text").GetComponent<Text>().text = "finish";
 
@@ -94,7 +94,7 @@ public class LoginGifts : MonoBehaviour {
 		{
 			btn.interactable = false;
 		
-			GameMgr.inst().uiControl.mainUI.setTip();
+		//	UIcontroller.getInst().mainUI.setTip();
 			
 			//btnTr.Find("Text").GetComponent<Text>().text = "finish";
 			GameDataMgr.inst().setLanguageTxt(doubleBtnTr.Find("Text").GetComponent<Text>().GetComponent<Text>(),24);
@@ -180,7 +180,7 @@ public class LoginGifts : MonoBehaviour {
 		});
 		}else
 		{
-			GameMgr.inst().uiControl.gameTip.showAtion(42);
+			UIcontroller.getInst().gameTip.showAtion(42);
 		}
 	}
 

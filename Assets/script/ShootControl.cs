@@ -83,7 +83,7 @@ public class ShootControl : MonoBehaviour {
   
 		if (Input.GetMouseButton(0) || Input.GetMouseButtonUp(0))
 		{
-			if(GameMgr.inst().uiControl.IsPointerOverUIObject(Input.mousePosition) && !indrag)
+			if(UIcontroller.getInst().IsPointerOverUIObject(Input.mousePosition) && !indrag)
 			{
 			//	Debug.Log(">>>>>>>>>>>>>>>>>click ui3");
 				return;

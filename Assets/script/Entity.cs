@@ -11,6 +11,9 @@ public class Entity : MonoBehaviour {
     public float lelfX = -2.8f;
     public float rightX = 2.8f;
 
+    public float upY = 4.6f;
+    public float downY = -4.6f;
+
 
 
     protected bool move = false;

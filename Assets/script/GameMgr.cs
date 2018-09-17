@@ -391,7 +391,7 @@ public class GameMgr : MonoBehaviour {
 		   {
 			   diamondNum -= num;
 			   PlayerPrefs.SetInt("diamondNum",diamondNum);
-			   GameMgr.inst().uiControl.updateDiamondTxt(diamondNum);
+			   UIcontroller.getInst().updateDiamondTxt(diamondNum);
 			   return true;
 		   }
 		   return false;

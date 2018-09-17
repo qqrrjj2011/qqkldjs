@@ -22,8 +22,8 @@ public class EndLessUI : MonoBehaviour {
 		contineBtn.GetComponent<Button>().onClick.AddListener(()=>{
 			transform.parent.gameObject.SetActive(false);
 				
-			GameMgr.inst().uiControl.gameContinueBySave();
-			//GameMgr.inst().uiControl.gameHalfStart();
+			UIcontroller.getInst().gameContinueBySave();
+			//UIcontroller.getInst().gameHalfStart();
 		});
 		rankBtn.GetComponent<Button>().onClick.AddListener(()=>{
 				 
@@ -31,7 +31,7 @@ public class EndLessUI : MonoBehaviour {
 		restartBtn.GetComponent<Button>().onClick.AddListener(()=>{
 				transform.parent.gameObject.SetActive(false);
 					
-				GameMgr.inst().uiControl.endLessStart();
+				UIcontroller.getInst().endLessStart();
 			});
 
 
@@ -40,7 +40,7 @@ public class EndLessUI : MonoBehaviour {
 		// halfBtn.GetComponent<Button>().onClick.AddListener(()=>{
 		// 		transform.parent.gameObject.SetActive(false);
 					
-		// 		GameMgr.inst().uiControl.gameHalfStart();
+		// 		UIcontroller.getInst().gameHalfStart();
 		// 	});
 
 		doStartAni();

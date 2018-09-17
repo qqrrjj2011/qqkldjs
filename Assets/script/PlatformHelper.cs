@@ -457,7 +457,7 @@ public class PlatformHelper : MonoBehaviour {
 						showAdmobOrUnityRewardAds(buyAction);
 					}else
 					{
-						GameMgr.inst().uiControl.gameTip.showAtion(42);
+						UIcontroller.getInst().gameTip.showAtion(42);
 						buyAction(0);
 					}
 					

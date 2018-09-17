@@ -51,9 +51,9 @@ public class AdsBar : MonoBehaviour {
 			});
 		}
 
-		// GameMgr.inst().uiControl.showBlockPanel(true,18);
+		// UIcontroller.getInst().showBlockPanel(true,18);
 		// PlatformHelper.inst().Pay(5,(int state)=>{
-		// 	GameMgr.inst().uiControl.showBlockPanel(false);
+		// 	UIcontroller.getInst().showBlockPanel(false);
 		// 	if(state == 1)
 		// 	{
 		// 		thisAction(true);

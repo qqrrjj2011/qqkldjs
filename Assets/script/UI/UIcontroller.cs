@@ -13,6 +13,8 @@ public class UIcontroller : MonoBehaviour {
 	
 	public GameObject pauseUI;
 
+	public GameObject gameUI;
+
 	public GameObject gameOverObj;
 
  
@@ -50,8 +52,16 @@ public class UIcontroller : MonoBehaviour {
     public int dieType = 0;
 
 	public Button pauseBtn;
+
+	static UIcontroller instance;
+
+	public static UIcontroller getInst()
+	{
+		return instance;
+	}
 	void Awake()
 	{
+		instance = this;
 		havaSetLanguage = PlayerPrefs.GetInt("havaSetLanguage",0);
 	  
 	}
@@ -59,8 +69,7 @@ public class UIcontroller : MonoBehaviour {
 	void Start () {
 
 		gameOverUI = gameOverObj.GetComponent<GameOverUI>();
-		
-		GameMgr.inst().uiControl = this;
+
  
 		dataMgrBtn.SetActive(false);
  
@@ -116,19 +125,13 @@ public class UIcontroller : MonoBehaviour {
 
 	public void enterMain(int index = 0)
 	{
-		GameMgr.inst().shootControl.clear();
+		EnemyControl.getInst().clear();
 		GameMgr.inst().setGameState(gameState.mainUI);
 		Time.timeScale = 1;
 		pauseUI.gameObject.SetActive(false);
 		
 		mainUI.gameObject.SetActive(true);
-		mainUI.switchUI(index);
  
-		if(!GameMgr.inst().havaSign() && !openLoginUI)
-		{
-			loginBtn();
-		}
-		GameMgr.inst().curGameMode = GameMode.none;
 	}
 
 	
@@ -151,6 +154,7 @@ public class UIcontroller : MonoBehaviour {
 		
 		pauseUI.SetActive(false);
 		gameOverObj.SetActive(false);
+		gameUI.SetActive(true);
 		if(GameMgr.inst().curGameMode == GameMode.endLess)
 			PlayerPrefs.SetInt("isSave",0);
 	 
@@ -165,8 +169,9 @@ public class UIcontroller : MonoBehaviour {
 		// 正常开始
 		if(type == 0)
 		{
+			GameMgr.inst().setGameState(gameState.ballRuning);
             GameMgr.inst().player.reStart();
-            GameMgr.inst().enemyControl.reStart();
+            EnemyControl.getInst().reStart();
  
 		}
 		// 暂停继续

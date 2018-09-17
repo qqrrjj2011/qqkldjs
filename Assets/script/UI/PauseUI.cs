@@ -9,29 +9,27 @@ public class PauseUI : MonoBehaviour {
 
 	public void homeClick()
 	{
-		if(GameMgr.inst().curGameMode == GameMode.level)
-		{
-			GameMgr.inst().uiControl.enterMain(2);
-		}else
-		{
-			GameMgr.inst().uiControl.enterMain();
-		}
+	
+			UIcontroller.getInst().enterMain();
+		
 		
 	}
 
 	public void newClick()
 	{
-		GameMgr.inst().uiControl.gameReplay();
+		UIcontroller.getInst().gameReplay();
 	}
 
 	public void continueClick()
 	{
-		GameMgr.inst().uiControl.gameContinue();
+		gameObject.SetActive(false);
+		GameMgr.inst().setGameState(gameState.ballRuning);
+		Time.timeScale = 1;
 	}
 
 	public void languageClick()
 	{
-		GameMgr.inst().uiControl.languageBtn();
+		UIcontroller.getInst().languageBtn();
 	}
 
 }

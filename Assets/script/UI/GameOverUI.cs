@@ -14,26 +14,26 @@ public class GameOverUI : MonoBehaviour {
 	
 	void OnEnable()
 	{
- 
+		
 	}
 
 
 	public void initUI()
 	{
-      
+		EnemyControl.getInst().clear();
  
 	}
 
 
 	public void replayClick()
 	{
-
+		UIcontroller.getInst().gameReplay();
 	}
 
 	public void homeClick()
 	{
-
-
+		gameObject.SetActive(false);
+		UIcontroller.getInst().enterMain();
 	}
 
 
@@ -56,7 +56,7 @@ public class GameOverUI : MonoBehaviour {
 		// 		if(finish)
 		// 		{
 		// 			gameObject.SetActive(false);
-		// 			GameMgr.inst().uiControl.Revive();
+		// 			UIcontroller.getInst().Revive();
 		// 		}else
 		// 		{
 		// 			setEndData();
