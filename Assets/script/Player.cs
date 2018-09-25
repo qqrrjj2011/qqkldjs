@@ -33,12 +33,14 @@ public class Player : Entity {
 
     public void reStart()
     {
+         DOTween.KillAll();
         transform.localScale = oriScale;
         transform.localPosition = oripos;
         DOTween.Sequence().AppendInterval(0.2f).AppendCallback(()=> {
             transform.localScale = oriScale;
             gameOver = false;
         });
+       
         curSmalTime = smalTimeGap;
        
     }
