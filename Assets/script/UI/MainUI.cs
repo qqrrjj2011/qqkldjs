@@ -20,6 +20,7 @@ public class MainUI : MonoBehaviour {
 	public void playClick()
 	{
 		gameObject.SetActive(false);
+		
 		UIcontroller.getInst().gameReplay();
 	}
 

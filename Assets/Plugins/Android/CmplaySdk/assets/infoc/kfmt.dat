@@ -1,3 +1,0 @@
-pinballvsblock_public:1 type:string user_id:string ver:string channel:string pkg_name:string child_channel:string mcc:short mnc:short language_setting:string brand:string model:string country_setting:string installtime:int osver:string x86:string appflyer_id:string gp_channel:string
-pinballvsblock_games_gameshow:101 uptime:int64 survival_time:int firstplay:byte network:byte type1:byte
-pinballvsblock_games_active:103 uptime:int64 network:byte

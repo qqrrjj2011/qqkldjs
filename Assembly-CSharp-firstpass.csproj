@@ -69,18 +69,7 @@
      <Compile Include="Assets\Plugins\PathologicalGames\PoolManager\PreRuntimePoolItem.cs" />
      <Compile Include="Assets\Plugins\PathologicalGames\PoolManager\SpawnPool.cs" />
      <Compile Include="Assets\Plugins\UnityChannel\XiaomiSupport\AppStoreSettings.cs" />
-     <Compile Include="Assets\Plugins\UnityPurchasing\script\CodelessIAPStoreListener.cs" />
-     <Compile Include="Assets\Plugins\UnityPurchasing\script\ComboBox.cs" />
-     <Compile Include="Assets\Plugins\UnityPurchasing\script\Demo\DemoInventory.cs" />
-     <Compile Include="Assets\Plugins\UnityPurchasing\script\IAPButton.cs" />
-     <Compile Include="Assets\Plugins\UnityPurchasing\script\IAPConfigurationHelper.cs" />
-     <Compile Include="Assets\Plugins\UnityPurchasing\script\IAPDemo.cs" />
-     <Compile Include="Assets\Plugins\UnityPurchasing\script\IAPDemoProductUI.cs" />
-     <Compile Include="Assets\Plugins\UnityPurchasing\script\IAPListener.cs" />
-     <Compile Include="Assets\Plugins\UnityPurchasing\script\PurchasingCheck.cs" />
-     <None Include="Assets\Plugins\Android\CmplaySdk\AndroidManifest.xml" />
      <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
-     <None Include="Assets\Plugins\UnityPurchasing\script\link.xml" />
      <None Include="Assets\Plugins\PathologicalGames\readme.txt" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>Q:/unity-game/BallFight/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
@@ -309,30 +298,6 @@
  </Reference>
  <Reference Include="UnityStore">
  <HintPath>Q:/unity-game/BallFight/Assets/Plugins/UnityChannel/UnityStore.dll</HintPath>
- </Reference>
- <Reference Include="Editor">
- <HintPath>Q:/unity-game/BallFight/Assets/Plugins/UnityPurchasing/Bin/Editor.dll</HintPath>
- </Reference>
- <Reference Include="Purchasing.Common">
- <HintPath>Q:/unity-game/BallFight/Assets/Plugins/UnityPurchasing/Bin/Purchasing.Common.dll</HintPath>
- </Reference>
- <Reference Include="Stores">
- <HintPath>Q:/unity-game/BallFight/Assets/Plugins/UnityPurchasing/Bin/Stores.dll</HintPath>
- </Reference>
- <Reference Include="Apple">
- <HintPath>Q:/unity-game/BallFight/Assets/Plugins/UnityPurchasing/Bin/Apple/Apple.dll</HintPath>
- </Reference>
- <Reference Include="FacebookStore">
- <HintPath>Q:/unity-game/BallFight/Assets/Plugins/UnityPurchasing/Bin/Facebook/FacebookStore.dll</HintPath>
- </Reference>
- <Reference Include="Security">
- <HintPath>Q:/unity-game/BallFight/Assets/Plugins/UnityPurchasing/Bin/Security/live/Security.dll</HintPath>
- </Reference>
- <Reference Include="Tizen">
- <HintPath>Q:/unity-game/BallFight/Assets/Plugins/UnityPurchasing/Bin/Tizen/Tizen.dll</HintPath>
- </Reference>
- <Reference Include="winrt">
- <HintPath>Q:/unity-game/BallFight/Assets/Plugins/UnityPurchasing/winrt/winrt.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Advertisements.Editor">
  <HintPath>Q:/unity-game/BallFight/Assets/UnityAds/UnityEngine.Advertisements.Editor.dll</HintPath>

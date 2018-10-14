@@ -21,6 +21,8 @@ public class GameOverUI : MonoBehaviour {
 	public void initUI()
 	{
 		EnemyControl.getInst().clear();
+
+		GameMgr.inst().musicControl.playBgMusic(soundType.fail);
  
 	}
 

@@ -85,7 +85,7 @@ public class Player : Entity {
                 mousePos.y = downY;
             if (mousePos.y > upY)
                 mousePos.y = upY;
-            transform.position = new Vector3(mousePos.x, mousePos.y, transform.position.z);
+            transform.position = new Vector3(mousePos.x, mousePos.y+1.2f, transform.position.z);
 
         }
         else if (Input.GetMouseButtonUp(0))

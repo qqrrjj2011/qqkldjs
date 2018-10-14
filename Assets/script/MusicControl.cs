@@ -8,7 +8,10 @@ public enum soundType {
 	pengzhuang,
 	xiaohui,
 	thunder,
-	dogEat
+	dogEat,
+	fail,
+	bgShengming,
+	bgZuoteng
 }
 public class MusicControl : MonoBehaviour {
 
@@ -21,7 +24,11 @@ public class MusicControl : MonoBehaviour {
 
 	public AudioClip dogEat;
 
+	public AudioClip fail;
 
+	public AudioClip bgShengming;
+
+	public AudioClip bgZuoteng;
 
 	AudioSource audioSource;
 	float pretTime = 0;
@@ -79,9 +86,35 @@ public class MusicControl : MonoBehaviour {
 				 
 			}	
 				break;
+			case soundType.fail:
+				audioSource.PlayOneShot(fail);
+				break;
 			default:
 				break;
 		}
+	}
+
+
+	public void playBgMusic(soundType type)
+	{
+		switch (type)
+		{
+			case soundType.bgShengming:
+			audioSource.clip = bgShengming;
+			audioSource.Play();
+			break;
+			case soundType.bgZuoteng:
+			audioSource.clip = bgZuoteng;
+			audioSource.Play();
+			break;
+			case soundType.fail:
+			audioSource.clip = fail;
+			audioSource.Play();
+			break;
+			default:
+			break;
+		}
+
 	}
 
 }

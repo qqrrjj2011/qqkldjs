@@ -71,7 +71,7 @@ public class UIcontroller : MonoBehaviour {
 		gameOverUI = gameOverObj.GetComponent<GameOverUI>();
 
  
-		dataMgrBtn.SetActive(false);
+	//	dataMgrBtn.SetActive(false);
  
 
 		gameTip =  transform.Find("Tip").GetComponent<Tip>();
@@ -151,7 +151,7 @@ public class UIcontroller : MonoBehaviour {
  
 	IEnumerator gamePlay(int type = 0)
 	{
-		
+		GameMgr.inst().musicControl.playBgMusic(soundType.bgShengming);
 		pauseUI.SetActive(false);
 		gameOverObj.SetActive(false);
 		gameUI.SetActive(true);

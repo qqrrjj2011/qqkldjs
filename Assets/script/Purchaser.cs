@@ -18,7 +18,7 @@ public class Purchaser : MonoBehaviour,IStoreListener{
 	private IStoreController m_Controller;  
 	private IExtensionProvider m_StoreExtensionProvider;
 	Action<int> payAtion;
-	private UnityEngine.Purchasing.Security.CrossPlatformValidator validator;  
+	//private UnityEngine.Purchasing.Security.CrossPlatformValidator validator;  
 	// Use this for initialization
 	// 月川id
 	string[] payIDs = {"jige01","","jige02","jige03","jige05","",""};
@@ -27,19 +27,19 @@ public class Purchaser : MonoBehaviour,IStoreListener{
 	int curId;
 	void Start () {
 
-		 var module = StandardPurchasingModule.Instance();  
-		var builder = ConfigurationBuilder.Instance (module);  
+		//  var module = StandardPurchasingModule.Instance();  
+		// var builder = ConfigurationBuilder.Instance (module);  
 	
-		//添加计费点  
-		#if UNITY_ANDROID
-			builder.AddProduct(payIDs[0], ProductType.Consumable);  
-		#elif UNITY_IOS
-			builder.AddProduct(payIDs[0], ProductType.NonConsumable);  
-		#endif
+		// //添加计费点  
+		// #if UNITY_ANDROID
+		// 	builder.AddProduct(payIDs[0], ProductType.Consumable);  
+		// #elif UNITY_IOS
+		// 	builder.AddProduct(payIDs[0], ProductType.NonConsumable);  
+		// #endif
 		
-		builder.AddProduct(payIDs[2], ProductType.Consumable);  
-		builder.AddProduct(payIDs[3], ProductType.Consumable);  
-		builder.AddProduct(payIDs[4], ProductType.Consumable);  
+		// builder.AddProduct(payIDs[2], ProductType.Consumable);  
+		// builder.AddProduct(payIDs[3], ProductType.Consumable);  
+		// builder.AddProduct(payIDs[4], ProductType.Consumable);  
 
 
 		// #if UNITY_ANDROID
@@ -65,7 +65,7 @@ public class Purchaser : MonoBehaviour,IStoreListener{
             // });
 
 	
-		UnityPurchasing.Initialize (this, builder);  
+	//	UnityPurchasing.Initialize (this, builder);  
 	}
 	
 	// Update is called once per frame
@@ -84,8 +84,8 @@ public void OnInitialized (IStoreController controller, IExtensionProvider exten
 	{
 		 // On Apple platforms we need to handle deferred purchases caused by Apple's Ask to Buy feature.  
 		// On non-Apple platforms this will have no effect; OnDeferred will never be called.  
-		var m_AppleExtensions = extensions.GetExtension<IAppleExtensions> ();  
-		m_AppleExtensions.RegisterPurchaseDeferredListener(OnDeferred);  
+		// var m_AppleExtensions = extensions.GetExtension<IAppleExtensions> ();  
+		// m_AppleExtensions.RegisterPurchaseDeferredListener(OnDeferred);  
 	
 		// var product = m_Controller.products.WithID("jige01");  
 		// //价格 (带货币单位的字符串)  
@@ -212,22 +212,22 @@ public void OnInitializeFailed (InitializationFailureReason error) {
                 Debug.Log("RestorePurchases started ...");
                 
                 // Fetch the Apple store-specific subsystem.
-                var apple = m_StoreExtensionProvider.GetExtension<IAppleExtensions>();
+                // var apple = m_StoreExtensionProvider.GetExtension<IAppleExtensions>();
                 // Begin the asynchronous process of restoring purchases. Expect a confirmation response in 
                 // the Action<bool> below, and ProcessPurchase if there are previously purchased products to restore.
-                apple.RestoreTransactions((result) => {
-                    // The first phase of restoration. If no more responses are received on ProcessPurchase then 
-                    // no purchases are available to be restored.
-                    Debug.Log("RestorePurchases continuing: " + result + ". If no further messages, no purchases available to restore.");
-					if(result)
-					{
-						ation(1);
-					}
-					else
-					{
-						ation(0);
-					}
-                });
+                // apple.RestoreTransactions((result) => {
+                //     // The first phase of restoration. If no more responses are received on ProcessPurchase then 
+                //     // no purchases are available to be restored.
+                //     Debug.Log("RestorePurchases continuing: " + result + ". If no further messages, no purchases available to restore.");
+				// 	if(result)
+				// 	{
+				// 		ation(1);
+				// 	}
+				// 	else
+				// 	{
+				// 		ation(0);
+				// 	}
+                // });
             }
             // Otherwise ...
             else
